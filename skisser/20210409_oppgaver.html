@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2021-04-12 Mon 09:58 -->
+<!-- 2021-04-12 Mon 10:41 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Programmeringsoppgaver</title>
@@ -75,7 +75,7 @@
 Dersom oppgaven sier at du skal «skrive et program som &#x2026;». Kan dette gjøres på flere måter. For eksempel, dersom oppgaven er som følger:
 </p>
 
-<div class="task" id="orgb790e1a">
+<div class="task" id="orgc8d7c1c">
 <p>
 Skriv et program som regner tar inn et ord og finner ut hvor mange bokstaver det er i ordet.
 </p>
@@ -86,29 +86,44 @@ Skriv et program som regner tar inn et ord og finner ut hvor mange bokstaver det
 Vil alle følgende tre programmer være en løsning av oppgaven:
 </p>
 
+<div class="CODEBLOCK" id="org81b8b1c">
+<p>
+
+</p>
+
 <p>
 <code>hardkodet</code>:
 </p>
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-variable-name">ordet</span> = <span class="org-string">"Megaord"</span>
-
 <span class="org-variable-name">antall_bokstaver</span> = <span class="org-builtin">len</span>(ordet)
-
 <span class="org-keyword">print</span>(antall_bokstaver)
 </pre>
 </div>
 
+</div>
+
+<div class="CODEBLOCK" id="orga978b2c">
 <p>
-<code>med input</code>:
+
+</p>
+
+<p>
+<code>med_input</code>:
 </p>
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-variable-name">ordet</span> = <span class="org-builtin">input</span>(<span class="org-string">"Hvilket ord vil du ha lengeden av? "</span>)
-
 <span class="org-variable-name">antall_bokstaver</span> = <span class="org-builtin">len</span>(ordet)
-
 <span class="org-keyword">print</span>(<span class="org-string">"I ordet '{ordet}' er det {antall_bokstaver} bokstaver."</span>)
 </pre>
 </div>
+
+</div>
+
+<div class="CODEBLOCK" id="orgd52ebe7">
+<p>
+
+</p>
 
 <p>
 <code>med_funksjon</code>:
@@ -118,6 +133,8 @@ Vil alle følgende tre programmer være en løsning av oppgaven:
     <span class="org-variable-name">svaret</span> = <span class="org-builtin">len</span>(ordet)
     <span class="org-keyword">return</span> svaret
 </pre>
+</div>
+
 </div>
 
 <p>
@@ -133,7 +150,7 @@ Legg her merke til at svarene blir mer og mer anvendelige også utenfor denne sp
 Et palindrom<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> er et ord som ser likt ut uavhengig av om du leser det forlengs eller baklengs. For eksempel er ordet «regninger» et palindrom.
 </p>
 
-<div class="task" id="orgba8b602">
+<div class="task" id="orgae10c04">
 <p>
 Skriv et program som tar inn et ord og finner ut om ordet er et palindrom eller ikke.
 </p>
@@ -148,7 +165,7 @@ Her kan du enten skrive en funksjon som returnerer <code>True</code> eller <code
 Tverrsummen av et tall er alle sifrene i tallet lagt sammen. For eksempel er tverrsummen av 453 lik 12, siden 4 + 5 + 3 = 12.
 </p>
 
-<div class="task" id="org37bde26">
+<div class="task" id="org7ab2842">
 <p>
 Skriv et program som tar inn et tall og regner ut tverrsummen av det.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
 </p>
@@ -159,7 +176,7 @@ Skriv et program som tar inn et tall og regner ut tverrsummen av det.<sup><a id=
 Over viste vi at tverrsummen av 453 var 12. Dette kalles den «største tverrsummen» av tallet, siden vi kan tverrsummen av 12 igjen, og få 1 + 2 = 3. Dette «siste» tallet, hvor vi har kommet oss ned til ett siffer, kalles da den «minste tverrsummen.
 </p>
 
-<div class="task" id="org5c815eb">
+<div class="task" id="orgc017888">
 <p>
 Skriv et program som tar inn et tall og regner ut den minste tverrsummen av det.
 </p>
@@ -175,7 +192,7 @@ Skriv et program som tar inn et tall og regner ut den minste tverrsummen av det.
 Et primtall er et tall som bare er delelig med seg selv eller 1.
 </p>
 
-<div class="task" id="org641a152">
+<div class="task" id="org698b770">
 <p>
 Skriv et program som tar inn et tall og finner ut hvorvidt tallet er et primtall.
 </p>
@@ -1549,7 +1566,7 @@ For hvert tidsskritt, endre farten med en akselerasjonsvektor rett nedover.<sup>
 </figure>
 </p>
 
-<div class="task" id="org8e35553">
+<div class="task" id="org52a89e6">
 <p>
 Lag et oppsett for dette med <code>pygame</code>.
 </p>
@@ -1560,7 +1577,7 @@ Lag et oppsett for dette med <code>pygame</code>.
 Lengden til et kast vil avhenge av utgangsfarten, her satt til \(|\vec{v}_0|\), vinkelen utgangshastigheten danner med horisontalplanet, her satt til \(\theta\).
 </p>
 
-<div class="task" id="orgf0e5532">
+<div class="task" id="org8a0674e">
 <p>
 Undersøk hvordan en endring i utgangsvinkelen påvirker lengden på kastet.<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>
 </p>
@@ -1581,7 +1598,12 @@ Du finner palindromer du kan teste svaret ditt på hos <a href="https://no.wikip
 <div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
 Her er det minst to distinkte fremgangsmåter. I den ene utnytter du at <code>str</code>-varianten av et tall kan iteres over, i den andre at heltallsdivisjon med 10 «fjerner» det bakerste sifferet.
 </p>
-<p class="footpara">
+<div class="CODEBLOCK" id="org6020947">
+<p>
+
+</p>
+
+<p>
 <code>talliterering</code>:
 </p>
 <div class="org-src-container">
@@ -1592,7 +1614,9 @@ Her er det minst to distinkte fremgangsmåter. I den ene utnytter du at <code>st
 </pre>
 </div>
 
-<pre class="example" id="org566346d">
+</div>
+
+<pre class="example" id="orgdee6e65">
 1
 2
 3
