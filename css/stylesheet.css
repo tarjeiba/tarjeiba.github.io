@@ -73,7 +73,7 @@ h1 {
 /* .outline-2 for ikke å få med table-of-contents-diven */
 .outline-2 h2::before {
     counter-increment: subsection;
-    content: counter(subsection) ": ";
+    /* content: counter(subsection) ": "; */
 	     
 }
 
