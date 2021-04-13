@@ -78,7 +78,7 @@ h1 {
 }
 
 .outline-2 h2 {
-    counter-reset: task;
+    /* counter-reset: task; */
     font-size: 1.5em;
     line-height: 1em;
     margin-bottom: 1em;
@@ -113,7 +113,7 @@ p.small, #postamble {
 
 .task::before {
     counter-increment:task;
-    content:"Oppgave " counter(subsection) "." counter(task);
+    content:"Oppgave " counter(task);
     font-weight: bold;
 }
 
