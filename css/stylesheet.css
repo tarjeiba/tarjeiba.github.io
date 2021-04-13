@@ -122,7 +122,7 @@ p.small, #postamble {
 }
 
 .task {
-    border-left: 6px solid #aaa;
+    border-left: 3px solid #aaa;
     padding-left: 10pt;
     padding-bottom: 0pt;
     overflow: inherit;
