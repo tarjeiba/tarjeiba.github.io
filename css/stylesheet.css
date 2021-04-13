@@ -49,6 +49,7 @@ body {
     font-family: "Open Sans";
     color: #333333;
     background-color: #ffffff;
+    counter-reset: task;
 
 }
 
