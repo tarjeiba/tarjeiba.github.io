@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-04-15 Thu 20:55 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Battleships</title>
+<meta name="author" content="Tarjei Bærland" />
+<meta name="generator" content="Org Mode" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Battleships</h1>
+
+<div id="outline-container-orgb301f72" class="outline-2">
+<h2 id="orgb301f72"><code>[/]</code> Introduksjon</h2>
+<div class="outline-text-2" id="text-orgb301f72">
+<p>
+Brettspillet Battleships spilles av to spillere mot hverandre. Spillbrettet er et rutenett på ti ganger ti ruter, hvor du før spillets start setter inn noen skip.
+</p>
+
+<p>
+Om vi fyller et spillebrett med skipene <i>hangarskip</i> (5), <i>krigsskip</i> (4), <i>slagskip</i> (3), <i>ubåt</i> (3), og <i>fregatt</i> (3), hvor tallene i parentes angir skipets størrelse, kan et gyldig spillbrett se ut som følger:
+</p>
+
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Sett inn spillbrett</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdf72c47" class="outline-2">
+<h2 id="orgdf72c47">Oppsett av brett</h2>
+<div class="outline-text-2" id="text-orgdf72c47">
+<p>
+For å kunne innføre litt tilfeldighet, henter jeg her <code>random</code>-biblioteket.
+</p>
+
+<div class="CODEBLOCK" id="orge7a8ba8">
+<p>
+
+</p>
+
+<p>
+<code>imports</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> random <span class="org-keyword">as</span> rnd
+</pre>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org865d264" class="outline-2">
+<h2 id="org865d264">Skudd</h2>
+<div class="outline-text-2" id="text-org865d264">
+<div class="CODEBLOCK" id="org57181dc">
+<p>
+
+</p>
+
+<p>
+<code>eksempelskudd</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span class="org-keyword">def</span> <span class="org-function-name">skudd</span>():
+    <span class="org-variable-name">kolonne</span> = rnd.choice(<span class="org-string">"ABCDEFGHIJ"</span>)
+    <span class="org-variable-name">rad</span> = rnd.randint(0, 9)
+    <span class="org-keyword">return</span> kolonne + <span class="org-builtin">str</span>(rad)
+</pre>
+</div>
+
+</div>
+
+<p>
+Dersom vi forsøker å bruke funksjonen <code>skudd</code> ved å skrive <code>skudd()</code> får vi nå et tilfeldig koordinat tilbake.
+</p>
+
+<div class="CODEBLOCK" id="org43bd0b5">
+<p>
+
+</p>
+
+<p>
+==:
+</p>
+<div class="org-src-container">
+<pre class="src src-jupyter-python">skudd()
+</pre>
+</div>
+
+</div>
+
+<pre class="example">
+G7
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org2b2e0b9" class="outline-2">
+<h2 id="org2b2e0b9">Tilbakemelding</h2>
+<div class="outline-text-2" id="text-org2b2e0b9">
+<p>
+Denne funksjonen tar imot en av strengene <code>"TREFF"</code>, <code>"BOM"</code>, eller <code>"UGYLDIG"</code>.
+</p>
+
+<p>
+Siden eksempelprogrammet vårt bare skal gjøre noe tilfeldig, trenger vi ikke å gjøre noe mer enn dette her.
+</p>
+
+<div class="CODEBLOCK" id="orgc6c1e47">
+<p>
+
+</p>
+
+<p>
+<code>eksempeltilbakemelding</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">tilbakemelding</span>(treffstatus):
+    <span class="org-doc">"""Ta imot tilbakemeldingen p&#229; skuddet du nettopp avfyrte. Her kan du avgj&#248;re hva som skal skje videre.</span>
+<span class="org-doc">    """</span>
+    <span class="org-keyword">pass</span> <span class="org-comment-delimiter"># </span><span class="org-comment">Eksempelprogrammet gj&#248;r ingenting</span>
+</pre>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2f8b570" class="outline-2">
+<h2 id="org2f8b570">Ferdig program</h2>
+<div class="outline-text-2" id="text-org2f8b570">
+<p>
+Det ferdige programmet du leverer skal minst ha et spillbrett og en <code>skyt</code>-funksjon. Programmet ser da ut som følger:
+</p>
+
+<div class="CODEBLOCK" id="org97de642">
+<p>
+
+</p>
+
+<p>
+==:
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&lt;&lt;imports&gt;&gt;
+
+&lt;&lt;eksempelbrett&gt;&gt;
+
+&lt;&lt;eksempelskudd&gt;&gt;
+
+&lt;&lt;eksempeltilbakemelding&gt;&gt;
+</pre>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcde7962" class="outline-2">
+<h2 id="orgcde7962">Til læreren</h2>
+<div class="outline-text-2" id="text-orgcde7962">
+<p>
+Elevens kode kommer til å bli kjørt som følger.
+</p>
+
+<p>
+Vi importerer elevens kode og gir den ene spilleren navnet <code>p1</code> og den andre spilleren navnet <code>p2</code>.
+</p>
+
+<div class="CODEBLOCK" id="org8dd845e">
+<p>
+
+</p>
+
+<p>
+<code>motorimports</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> spillereksempel <span class="org-keyword">as</span> p1
+<span class="org-keyword">import</span> spillereksempel <span class="org-keyword">as</span> p2
+
+<span class="org-keyword">import</span> time
+</pre>
+</div>
+
+</div>
+
+<p>
+Vi må se på hvor mange skudd og hvor mange treff vi har.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

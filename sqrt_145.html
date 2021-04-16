@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nb" xml:lang="nb">
+<head>
+<!-- 2021-04-15 Thu 20:55 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tilnærming til kvadratrot via derivert</title>
+<meta name="author" content="Tarjei Bærland" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Tilnærming til kvadratrot via derivert</h1>
+<p>
+De mer tallintesserte av oss kjenner igjen \(144\) som et kvadrattall, \(12^2\). Dersom vi så stiller spørsmålet «hva er \(\sqtr{144}\)?» så er svaret «\(12\)».
+</p>
+
+<p>
+Hva om spørsmålet er
+</p>
+
+<div class="task" id="orgd0ecce0">
+<p>
+Hva er \(\sqrt{145}\)?
+</p>
+
+</div>
+
+<p>
+Kanskje løser du den oppgava med en kalkulator, får svaret under og sier deg fornøyd med det.
+</p>
+
+<div class="CODEBLOCK" id="orgccdc15b">
+<p>
+
+</p>
+
+<p>
+==:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">from</span> math <span class="org-keyword">import</span> sqrt
+<span class="org-keyword">print</span>(<span class="org-string">"Kvadratroten av 145 er"</span>, sqrt(145))
+</pre>
+</div>
+
+</div>
+
+<p>
+Kvadratroten av 145 er altså litt mer enn 12. Det gir mening, for 12<sup>2</sup> er 144 og 13<sup>2</sup> er 169. 145 er mellom 144 og 169, og det virker fornuftig da at √145 er mellom √144 og √169.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+
+<p>
+Hva om vi ikke hadde kalkulator tilgjengelig? Kunne vi ha funnet en bedre tilnærming enn å si at \(\sqrt{145} \approx \sqrt{144} = 12\)?
+</p>
+
+<div id="outline-container-org0c3e5f9" class="outline-2">
+<h2 id="org0c3e5f9">\((\sqrt{x})'\) rundt \(x = 144\)</h2>
+<div class="outline-text-2" id="text-org0c3e5f9">
+<p>
+La oss se på grafen til \(f(x) = \sqrt{x}\).
+</p>
+
+<div class="CODEBLOCK" id="orgec7fd8d">
+<p>
+
+</p>
+
+<p>
+==:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> matplotlib.pyplot <span class="org-keyword">as</span> plt
+<span class="org-keyword">import</span> numpy <span class="org-keyword">as</span> np
+
+<span class="org-variable-name">xs</span> = np.linspace(0, 200, 1000)
+<span class="org-variable-name">ys</span> = np.sqrt(xs)
+
+plt.plot(xs, ys)
+</pre>
+</div>
+
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes" hidden>Fotnoter</h2>
+<hr>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+Dette gjelder kun dersom \(f(x) = \sqrt{x}\) er <i>monoton</i> i intervallet \(144 <= x <= 169\), altså at \(f'(x)\) ikke skifter fortegn i dette intervallet. 
+</p></div></div>
+
+
+</div>
+</div></div>
+</body>
+</html>

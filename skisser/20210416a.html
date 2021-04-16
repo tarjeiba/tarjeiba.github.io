@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
+<head>
+<!-- 2021-04-16 Fri 12:38 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gode programmeringsoppgaver</title>
+<meta name="author" content="Tarjei Bærland" />
+<meta name="generator" content="Org Mode" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<link rel="icon" type="image/x-icon" href="/promo/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/promo/stylesheet.css">
+<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.min.js" type="text/javascript"></script>
+<script src="/js/skulpt.min.js" type="text/javascript"></script>   
+<script src="/js/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/js/editor.js" type="text/javascript"></script>       
+<script src="/js/codemirror_python.js"></script>                   
+<script src="/js/codemirror.js"></script>                          
+<link rel="stylesheet" href="/css/codemirror.css">                 
+<link rel="stylesheet" media="screen" href="/css/main.css">                 
+<link rel="stylesheet" media="print" href="/css/print.css">                 
+</div>
+<div id="content">
+<h1 class="title">Gode programmeringsoppgaver</h1>
+<p>
+Hva er en god og hva er en dårlig programmeringsoppgave, og hvorfor skal programmeringa inn i matematikken?
+</p>
+
+<div id="outline-container-org96a553f" class="outline-2">
+<h2 id="org96a553f">Programmering som et kreativt verktøy</h2>
+<div class="outline-text-2" id="text-org96a553f">
+<p>
+Jeg mener programmering er en kreativ aktivitet. Med «programmering» mener jeg da noe à la
+</p>
+
+<div class="definition" id="org37bff91">
+<p>
+programmering
+</p>
+
+<p>
+Å sette sammen et sett med instruksjoner for at noe skal skje
+</p>
+
+</div>
+
+<p>
+I undervisninga har jeg brukt programmering både i matematikken og som en et verktøy i teknologi og forskningslære. En oppgave fra matematikken kan typisk være som
+</p>
+
+<div class="task" id="org887c22c">
+<p>
+Lag et program som skriver ut det 48. primtallet.
+</p>
+
+</div>
+
+<p>
+Hvorvidt dette er en god eller dårlig oppgave, avhenger av hvilken kontekst den er gitt i, og til hvilken grad eleven sjøl mener hun har kommet fram til løsningen.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org678cd12" class="outline-2">
+<h2 id="org678cd12">Kontekst</h2>
+<div class="outline-text-2" id="text-org678cd12">
+<p>
+Den mest åpenbare konteksten for en programmeringsoppgave er hvilket språk eleven skal jobbe med. Om vi tar utgangspunkt i <a href="#org887c22c">Oppgave (primtall)</a>, vil elevene med en typisk Python-installasjon kunne løse denne oppgaven på følgende måte:
+</p>
+
+<div class="CODEBLOCK" id="orgf63b3d0">
+<p>
+
+</p>
+
+<p>
+==:
+</p>
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span class="org-keyword">from</span> sympy <span class="org-keyword">import</span> prime
+
+<span class="org-keyword">print</span>(prime(48))
+</pre>
+</div>
+
+</div>
+
+<pre class="example">
+223
+</pre>
+
+
+<p>
+Dette gjør sjølsagt oppgave fullstendig uinteressant. Sannsynligvis har vi også klart å gi eleven følelsen av at programmering innebærer nok en runde med pugg, magi og «prøv deg fram til noe fungerer».
+</p>
+
+<p>
+Hvordan kan vi gjøre denne oppgaven interessant?
+</p>
+
+<p>
+Vel, svaret ligger ikke i oppgaveteksten, den er uinteressant for 99 av 100 personer uansett hvordan vi vrir og vender på det. Det avhenger av hvilken kontekst vi lar elevene jobbe i.
+</p>
+
+<div class="task" id="orga273427">
+<p>
+Ved å bruke enkle konstruksjoner (regning, løkker og <code>if</code>-setninger), lag et program som skriver ut det 48. primtallet.
+</p>
+
+</div>
+
+<p>
+Her er hverken 48, «primtall» eller hvilket programmeringsspråk elevene arbeider med viktig. Det som er viktig, er at elevene får en oppgave de forstår fullt ut med en gang, hvor de også kjenner byggesteinene de kan bruke for å teste svaret sitt.
+</p>
+
+<p>
+Som lærer har du da en fil, <code>kontekst.py</code> i bakhånd, så når en del elever har prøvd en stund, men ikke funnet en måte å sjekke om noe er et primtall på, kan du ta fram denne.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

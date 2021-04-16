@@ -1,0 +1,259 @@
+/* @group Fonts */
+
+@page {
+  margin: 2cm;
+}
+
+dt {
+    break-after: avoid;
+    page-break-after: avoid;
+}
+
+dd {
+    break-before: avoid;
+}g
+
+h2:nth-of-type(n+1) {
+    break-before: page;
+}
+
+h3 {
+    break-after: avoid;
+}
+
+h1, h2, h3, h4, h5, h6,
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    font-family: "Open Sans", Tahoma, Geneva, sans-serif;
+    margin: 0;
+}
+
+#text-table-of-contents a {
+    font-family: "Open Sans";
+
+}
+
+pre  {
+    border: 1px solid #ccc;
+    padding: 8pt;
+    font-family: "Source Code Pro",  monospace;
+    width: 100%;
+    overflow: auto;
+    margin: auto;
+    display: inline-block;
+    line-height: 1.0em;
+    text-align: left;
+}
+
+pre .org-variable-name {
+    font-weight: 600;
+}
+
+pre .org-keyword {
+    font-weight: 600;
+}
+
+pre .org-comment {
+    font-weight: lighter;
+}
+
+pre .org-comment-delimiter {
+    font-weight: lighter;
+}
+
+body {
+    font-size: 12pt;
+    line-height: 18pt;
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans";
+    color: #333333;
+    background-color: #ffffff;
+    counter-reset: task;
+
+}
+
+figure, .figure {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+span.figure-number {
+    font-weight: bold;
+}
+
+h1 {
+    counter-reset: subsection;
+    font-size: 1.6666666666666667em;
+    line-height: 0.9em;
+    margin-bottom: 0.9em;
+}
+
+
+/* .outline-2 for ikke å få med table-of-contents-diven */
+.outline-2 h2::before {
+    counter-increment: subsection;
+    /* content: counter(subsection) ": "; */
+	     
+}
+
+.outline-2 h2 {
+    font-size: 2.5em;
+    line-height: 1em;
+    margin-bottom: 1em;
+    margin-top: 2.0em;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+
+h2:nth-of-type(2+) {
+    page-break-before: always;
+}
+
+h3 {
+    font-size: 1.1666666666666667em;
+    line-height: 1.125em;
+    margin-bottom: 1.125em;
+    margin-top: 2.0em;
+}
+
+h4 {
+    font-size: 1.3333333333333333em;
+    line-height: 1.2857142857142858em;
+    margin-bottom: 1.2857142857142858em;
+}
+
+p, ul, blockquote, td, th, label {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+p.small, #postamble {
+    margin: 0;
+    font-size: 0.8333333333333334em;
+    line-height: 1.8em;
+    margin-bottom: 1.8em;
+}
+
+.task::before {
+    counter-increment:task;
+    content:"Oppgave " counter(task);
+    font-weight: bold;
+}
+
+.task p {
+    margin: 0;
+}
+
+.task {
+    border-left: 3px solid #aaa;
+    padding-left: 10pt;
+    padding-bottom: 0pt;
+    overflow: inherit;
+    text-align: left;
+    display: inline-block;
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+}
+
+.CODEBLOCK {
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+}
+
+.CODEBLOCK p{
+    margin: 0;
+}
+
+
+/* dt { */
+/*     float: left; */
+/*     clear: left; */
+/*     /\* width: 30px; *\/ */
+/*     font-weight: bold; */
+/*     vertical-align: middle; */
+/* } */
+
+/* dd { */
+/*     margin: 0 0 0 50px; */
+/*     padding: 0 0 0.3em 0; */
+/* } */
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 1.5em;
+}
+
+#content {
+    max-width: 70em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px;
+}
+
+
+#table-of-contents {
+    /* width: 15em; */
+    /* float: left; */
+    overflow: auto;
+}
+
+
+#postamble {
+    clear: both;
+    text-align: center;
+}
+
+#postamble p {
+    margin: 0px;
+}
+
+
+h1.title {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: -0.1em;
+    margin-bottom: 0.2em;
+}
+
+#table-of-contents h2 {
+    letter-spacing: -0.1em;
+}
+
+#table-of-contents ul,
+#table-of-contents ol {
+    padding-left: 1em;
+}
+
+td {
+    border: 1px solid #ccc;
+}
+
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+    background-color: #eee;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+h2 :has(.hide) {
+    visibility: hidden;
+}
+
+.outline-1, .outline-2, .outline-3, .outline-4, .outline-5, .outline-6 {
+    margin-left: 0em;
+}
+
+a {
+    text-decoration: none;
+    color: #6699ff;
+}
+
+a:hover {
+    border-bottom: 1px dotted #57d;
+}
