@@ -3,35 +3,13 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nb" xml:lang="nb">
 <head>
-<!-- 2021-04-15 Thu 20:55 -->
+<!-- 2021-05-10 Mon 10:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Tilnærming til kvadratrot via derivert</title>
 <meta name="author" content="Tarjei Bærland" />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -52,11 +30,25 @@
              }
 });
 </script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
-<div id="content">
+<div id="preamble" class="status">
+<link rel="icon" type="image/x-icon" href="/promo/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/promo/stylesheet.css">
+<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.min.js" type="text/javascript"></script>
+<script src="/js/skulpt.min.js" type="text/javascript"></script>   
+<script src="/js/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/js/editor.js" type="text/javascript"></script>       
+<script src="/js/codemirror_python.js"></script>                   
+<script src="/js/codemirror.js"></script>                          
+<link rel="stylesheet" href="/css/codemirror.css">                 
+<link rel="stylesheet" media="screen" href="/css/main.css">                 
+<link rel="stylesheet" media="print" href="/css/print.css">                 
+</div>
+<div id="content" class="content">
 <h1 class="title">Tilnærming til kvadratrot via derivert</h1>
 <p>
 De mer tallintesserte av oss kjenner igjen \(144\) som et kvadrattall, \(12^2\). Dersom vi så stiller spørsmålet «hva er \(\sqtr{144}\)?» så er svaret «\(12\)».
@@ -66,7 +58,7 @@ De mer tallintesserte av oss kjenner igjen \(144\) som et kvadrattall, \(12^2\).
 Hva om spørsmålet er
 </p>
 
-<div class="task" id="orgd0ecce0">
+<div class="task" id="orga00b0b3">
 <p>
 Hva er \(\sqrt{145}\)?
 </p>
@@ -77,20 +69,10 @@ Hva er \(\sqrt{145}\)?
 Kanskje løser du den oppgava med en kalkulator, får svaret under og sier deg fornøyd med det.
 </p>
 
-<div class="CODEBLOCK" id="orgccdc15b">
-<p>
-
-</p>
-
-<p>
-==:
-</p>
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">from</span> math <span class="org-keyword">import</span> sqrt
 <span class="org-keyword">print</span>(<span class="org-string">"Kvadratroten av 145 er"</span>, sqrt(145))
 </pre>
-</div>
-
 </div>
 
 <p>
@@ -108,14 +90,6 @@ Hva om vi ikke hadde kalkulator tilgjengelig? Kunne vi ha funnet en bedre tilnæ
 La oss se på grafen til \(f(x) = \sqrt{x}\).
 </p>
 
-<div class="CODEBLOCK" id="orgec7fd8d">
-<p>
-
-</p>
-
-<p>
-==:
-</p>
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> matplotlib.pyplot <span class="org-keyword">as</span> plt
 <span class="org-keyword">import</span> numpy <span class="org-keyword">as</span> np
@@ -125,8 +99,6 @@ La oss se på grafen til \(f(x) = \sqrt{x}\).
 
 plt.plot(xs, ys)
 </pre>
-</div>
-
 </div>
 </div>
 </div>
