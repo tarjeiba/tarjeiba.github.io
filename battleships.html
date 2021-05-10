@@ -1,39 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2021-04-15 Thu 20:55 -->
+<!-- 2021-05-10 Mon 10:05 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Battleships</title>
 <meta name="author" content="Tarjei Bærland" />
 <meta name="generator" content="Org Mode" />
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
+<div id="preamble" class="status">
+<link rel="icon" type="image/x-icon" href="/promo/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/promo/stylesheet.css">
+<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.min.js" type="text/javascript"></script>
+<script src="/js/skulpt.min.js" type="text/javascript"></script>   
+<script src="/js/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/js/editor.js" type="text/javascript"></script>       
+<script src="/js/codemirror_python.js"></script>                   
+<script src="/js/codemirror.js"></script>                          
+<link rel="stylesheet" href="/css/codemirror.css">                 
+<link rel="stylesheet" media="screen" href="/css/main.css">                 
+<link rel="stylesheet" media="print" href="/css/print.css">                 
+</div>
+<div id="content" class="content">
 <h1 class="title">Battleships</h1>
 
 <div id="outline-container-orgb301f72" class="outline-2">
@@ -60,19 +53,9 @@ Om vi fyller et spillebrett med skipene <i>hangarskip</i> (5), <i>krigsskip</i> 
 For å kunne innføre litt tilfeldighet, henter jeg her <code>random</code>-biblioteket.
 </p>
 
-<div class="CODEBLOCK" id="orge7a8ba8">
-<p>
-
-</p>
-
-<p>
-<code>imports</code>:
-</p>
 <div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">import</span> random <span class="org-keyword">as</span> rnd
+<pre class="src src-python" id="orge7a8ba8"><span class="org-keyword">import</span> random <span class="org-keyword">as</span> rnd
 </pre>
-</div>
-
 </div>
 </div>
 </div>
@@ -80,41 +63,21 @@ For å kunne innføre litt tilfeldighet, henter jeg her <code>random</code>-bibl
 <div id="outline-container-org865d264" class="outline-2">
 <h2 id="org865d264">Skudd</h2>
 <div class="outline-text-2" id="text-org865d264">
-<div class="CODEBLOCK" id="org57181dc">
-<p>
-
-</p>
-
-<p>
-<code>eksempelskudd</code>:
-</p>
 <div class="org-src-container">
-<pre class="src src-jupyter-python"><span class="org-keyword">def</span> <span class="org-function-name">skudd</span>():
+<pre class="src src-jupyter-python" id="org57181dc"><span class="org-keyword">def</span> <span class="org-function-name">skudd</span>():
     <span class="org-variable-name">kolonne</span> = rnd.choice(<span class="org-string">"ABCDEFGHIJ"</span>)
     <span class="org-variable-name">rad</span> = rnd.randint(0, 9)
     <span class="org-keyword">return</span> kolonne + <span class="org-builtin">str</span>(rad)
 </pre>
 </div>
 
-</div>
-
 <p>
 Dersom vi forsøker å bruke funksjonen <code>skudd</code> ved å skrive <code>skudd()</code> får vi nå et tilfeldig koordinat tilbake.
 </p>
 
-<div class="CODEBLOCK" id="org43bd0b5">
-<p>
-
-</p>
-
-<p>
-==:
-</p>
 <div class="org-src-container">
 <pre class="src src-jupyter-python">skudd()
 </pre>
-</div>
-
 </div>
 
 <pre class="example">
@@ -134,22 +97,12 @@ Denne funksjonen tar imot en av strengene <code>"TREFF"</code>, <code>"BOM"</cod
 Siden eksempelprogrammet vårt bare skal gjøre noe tilfeldig, trenger vi ikke å gjøre noe mer enn dette her.
 </p>
 
-<div class="CODEBLOCK" id="orgc6c1e47">
-<p>
-
-</p>
-
-<p>
-<code>eksempeltilbakemelding</code>:
-</p>
 <div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">tilbakemelding</span>(treffstatus):
+<pre class="src src-python" id="orgc6c1e47"><span class="org-keyword">def</span> <span class="org-function-name">tilbakemelding</span>(treffstatus):
     <span class="org-doc">"""Ta imot tilbakemeldingen p&#229; skuddet du nettopp avfyrte. Her kan du avgj&#248;re hva som skal skje videre.</span>
 <span class="org-doc">    """</span>
     <span class="org-keyword">pass</span> <span class="org-comment-delimiter"># </span><span class="org-comment">Eksempelprogrammet gj&#248;r ingenting</span>
 </pre>
-</div>
-
 </div>
 </div>
 </div>
@@ -161,14 +114,6 @@ Siden eksempelprogrammet vårt bare skal gjøre noe tilfeldig, trenger vi ikke �
 Det ferdige programmet du leverer skal minst ha et spillbrett og en <code>skyt</code>-funksjon. Programmet ser da ut som følger:
 </p>
 
-<div class="CODEBLOCK" id="org97de642">
-<p>
-
-</p>
-
-<p>
-==:
-</p>
 <div class="org-src-container">
 <pre class="src src-python">&lt;&lt;imports&gt;&gt;
 
@@ -178,8 +123,6 @@ Det ferdige programmet du leverer skal minst ha et spillbrett og en <code>skyt</
 
 &lt;&lt;eksempeltilbakemelding&gt;&gt;
 </pre>
-</div>
-
 </div>
 </div>
 </div>
@@ -195,22 +138,12 @@ Elevens kode kommer til å bli kjørt som følger.
 Vi importerer elevens kode og gir den ene spilleren navnet <code>p1</code> og den andre spilleren navnet <code>p2</code>.
 </p>
 
-<div class="CODEBLOCK" id="org8dd845e">
-<p>
-
-</p>
-
-<p>
-<code>motorimports</code>:
-</p>
 <div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">import</span> spillereksempel <span class="org-keyword">as</span> p1
+<pre class="src src-python" id="org8dd845e"><span class="org-keyword">import</span> spillereksempel <span class="org-keyword">as</span> p1
 <span class="org-keyword">import</span> spillereksempel <span class="org-keyword">as</span> p2
 
 <span class="org-keyword">import</span> time
 </pre>
-</div>
-
 </div>
 
 <p>
